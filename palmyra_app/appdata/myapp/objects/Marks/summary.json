@@ -1,0 +1,37 @@
+{
+  "name" : "<tobechanged>",
+  "label" : "Marks",
+  "mode" : "block",
+  "active" : true,
+  "fields" : [ {
+    "name" : "id",
+    "searchable" : true,
+    "sortable" : true
+  }, {
+    "name" : "exam",
+    "mandatory" : true,
+    "searchable" : true,
+    "sortable" : true
+  }, {
+    "name" : "studentCode",
+    "mandatory" : true,
+    "searchable" : true,
+    "sortable" : true
+  }, {
+    "name" : "english"
+  }, {
+    "name" : "maths"
+  }, {
+    "name" : "science"
+  }, {
+    "name" : "tamil"
+  }, {
+    "name" : "history"
+  },
+  {
+    "name" : "total",
+    "dropMode" : "incoming"
+  } ],
+  "editable" : "editable",
+  "type" : "Marks"
+}

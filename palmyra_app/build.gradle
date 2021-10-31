@@ -1,0 +1,87 @@
+plugins {
+	id 'java'
+}
+
+def versions = [jetty : '10.0.6']
+
+group = 'com.biocliq.myapp'
+
+repositories {
+	mavenLocal()
+	//maven {
+	//	url="https://dl.fluwiz.com/repo/releases"
+	//}	
+	mavenCentral()	
+}
+
+sourceCompatibility = '11'
+
+dependencies {
+	implementation group: 'com.biocliq.fluwiz', name: 'fluwiz-server', version:'0.3-SNAPSHOT'	
+
+implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.0.0'
+
+	testImplementation group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+	testImplementation group: 'org.springframework.security', name: 'spring-security-test', version: '5.5.0'		
+	testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.5.5'	
+	testImplementation group: 'org.springframework.boot', name: 'spring-boot-test', version: '2.5.5'	
+	testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.8.0'
+	testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.8.0'
+}
+
+configurations {
+    all*.exclude module : 'spring-boot-starter-logging'
+}
+
+
+jar {    
+    exclude('*.xml')
+    exclude('*.properties')
+}
+
+configurations.all {
+	// if needed to pull the latest SNAPSHOT releases, remove the comment below and run gradle.
+    // resolutionStrategy.cacheChangingModulesFor 1, 'minutes'
+}
+
+// Tasks to generate dist directory. 
+
+def dir = [
+	dist : "./dist",
+	dist_lib : "./dist/libs",
+	resources : "./dist/resources"
+]
+
+task createBuildDir {
+	delete "${dir.dist}"
+    mkdir "${dir.dist_lib}"
+    mkdir "${dir.resources}"
+}
+
+task copyDeps(type: Copy) {
+	from configurations.runtimeClasspath
+	into "${dir.dist_lib}"   
+}
+
+task deployConfig(type:Copy){
+     into("${dir.dist}")	
+     into("resources"){
+		from "./src/main/resources/"
+     }     
+     into("."){
+		from "./scripts/"           
+     }
+     into("appdata"){
+     	from "./appdata/"
+     }
+}
+
+task deploy (type: Copy, dependsOn:[build,createBuildDir,copyDeps,deployConfig]){
+    from jar
+    into "${dir.dist_lib}"
+}
+
+
+test {
+    useJUnitPlatform()
+}

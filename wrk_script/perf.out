@@ -1,0 +1,249 @@
+Warming Up
+loop 1
+Running 1m test @ http://localhost:6060/palmyra/api/v2/myapp/query/Student
+  4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    41.52ms  121.61ms   1.98s    95.98%
+    Req/Sec     1.33k   398.56     2.36k    68.98%
+  317122 requests in 1.00m, 773.92MB read
+  Socket errors: connect 0, read 0, write 0, timeout 33
+Requests/sec:   5282.32
+Transfer/sec:     12.89MB
+Running 1m test @ http://localhost:8080/student
+  4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    82.23ms  151.47ms   2.00s    95.71%
+    Req/Sec   455.78    179.81   780.00     64.39%
+  106355 requests in 1.00m, 856.84MB read
+  Socket errors: connect 0, read 0, write 0, timeout 16
+Requests/sec:   1769.96
+Transfer/sec:     14.26MB
+Running 1m test @ http://localhost:8888/api/v1/Student
+  4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    27.54ms   32.33ms 561.56ms   90.77%
+    Req/Sec     1.17k   339.45     2.75k    71.15%
+  280497 requests in 1.00m, 780.10MB read
+Requests/sec:   4668.64
+Transfer/sec:     12.98MB
+loop 2
+Running 1m test @ http://localhost:6060/palmyra/api/v2/myapp/query/Student
+  4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.21ms   14.04ms 235.32ms   84.83%
+    Req/Sec     1.99k   204.97     3.78k    77.71%
+  475555 requests in 1.00m, 1.13GB read
+Requests/sec:   7918.58
+Transfer/sec:     19.32MB
+Running 1m test @ http://localhost:8080/student
+  4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    46.03ms   34.60ms 301.21ms   60.80%
+    Req/Sec   586.24     59.58   792.00     69.08%
+  140248 requests in 1.00m, 1.10GB read
+Requests/sec:   2333.87
+Transfer/sec:     18.80MB
+Running 1m test @ http://localhost:8888/api/v1/Student
+  4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    19.25ms   15.40ms 179.41ms   63.11%
+    Req/Sec     1.43k   105.05     2.39k    73.47%
+  341923 requests in 1.00m, 0.93GB read
+Requests/sec:   5691.06
+Transfer/sec:     15.83MB
+loop 3
+Running 1m test @ http://localhost:6060/palmyra/api/v2/myapp/query/Student
+  4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.06ms   13.80ms 155.17ms   84.23%
+    Req/Sec     2.01k   190.80     2.74k    70.88%
+  479909 requests in 1.00m, 1.14GB read
+Requests/sec:   7996.53
+Transfer/sec:     19.52MB
+Running 1m test @ http://localhost:8080/student
+  4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    46.25ms   34.84ms 340.48ms   61.03%
+    Req/Sec   583.86     59.53     0.88k    70.02%
+  139597 requests in 1.00m, 1.10GB read
+Requests/sec:   2322.93
+Transfer/sec:     18.71MB
+Running 1m test @ http://localhost:8888/api/v1/Student
+  4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    19.27ms   15.43ms 192.95ms   63.17%
+    Req/Sec     1.43k   102.07     2.28k    70.93%
+  341541 requests in 1.00m, 0.93GB read
+Requests/sec:   5683.97
+Transfer/sec:     15.81MB
+----------------
+Starting Test
+-----------------
+60 Seconds, 4 Threads, 100 connections
+Palmyra
+Running 1m test @ http://localhost:6060/palmyra/api/v2/myapp/query/Student
+  4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    14.90ms   13.30ms 133.74ms   82.81%
+    Req/Sec     2.00k   184.65     6.13k    76.38%
+  478816 requests in 1.00m, 1.14GB read
+Requests/sec:   7967.76
+Transfer/sec:     19.44MB
+Spring Data 
+Running 1m test @ http://localhost:8080/student
+  4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    46.30ms   34.65ms 305.98ms   60.53%
+    Req/Sec   581.66     58.89   808.00     70.17%
+  139158 requests in 1.00m, 1.09GB read
+Requests/sec:   2315.49
+Transfer/sec:     18.65MB
+Spring Custom
+Running 1m test @ http://localhost:8888/api/v1/Student
+  4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    19.12ms   15.23ms 207.50ms   63.15%
+    Req/Sec     1.44k   101.75     3.21k    71.05%
+  343379 requests in 1.00m, 0.93GB read
+Requests/sec:   5714.80
+Transfer/sec:     15.89MB
+60 Seconds, 4 Threads, 500 connections
+Palmyra
+Running 1m test @ http://localhost:6060/palmyra/api/v2/myapp/query/Student
+  4 threads and 500 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    72.74ms   68.79ms 421.19ms   73.30%
+    Req/Sec     1.99k   237.89     3.12k    72.50%
+  474422 requests in 1.00m, 1.13GB read
+Requests/sec:   7901.34
+Transfer/sec:     19.28MB
+Spring Data 
+Running 1m test @ http://localhost:8080/student
+  4 threads and 500 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   222.60ms   96.64ms   1.07s    84.04%
+    Req/Sec   567.87     61.08   750.00     72.88%
+  135673 requests in 1.00m, 1.07GB read
+Requests/sec:   2257.67
+Transfer/sec:     18.19MB
+Spring Custom
+Running 1m test @ http://localhost:8888/api/v1/Student
+  4 threads and 500 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    94.79ms   63.77ms 754.56ms   86.56%
+    Req/Sec     1.43k   102.19     1.70k    78.69%
+  340939 requests in 1.00m, 0.93GB read
+Requests/sec:   5676.80
+Transfer/sec:     15.79MB
+60 Seconds, 4 Threads, 1000 connections
+Palmyra
+Running 1m test @ http://localhost:6060/palmyra/api/v2/myapp/query/Student
+  4 threads and 1000 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   134.13ms  116.83ms 790.03ms   35.84%
+    Req/Sec     1.97k   275.00     2.97k    74.59%
+  469809 requests in 1.00m, 1.12GB read
+Requests/sec:   7818.79
+Transfer/sec:     19.08MB
+Spring Data 
+Running 1m test @ http://localhost:8080/student
+  4 threads and 1000 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   442.53ms  124.91ms   1.22s    83.56%
+    Req/Sec   563.79     69.73   808.00     72.73%
+  134380 requests in 1.00m, 1.06GB read
+Requests/sec:   2236.83
+Transfer/sec:     18.02MB
+Spring Custom
+Running 1m test @ http://localhost:8888/api/v1/Student
+  4 threads and 1000 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   175.85ms   63.02ms 982.88ms   84.14%
+    Req/Sec     1.44k   107.28     2.00k    82.33%
+  341203 requests in 1.00m, 0.93GB read
+Requests/sec:   5677.62
+Transfer/sec:     15.79MB
+5 minutes, 4 Threads, 1000 connections
+Palmyra
+Running 5m test @ http://localhost:6060/palmyra/api/v2/myapp/query/Student
+  4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.18ms   14.01ms 140.12ms   84.26%
+    Req/Sec     2.02k   195.34     2.67k    70.26%
+  2408679 requests in 5.00m, 5.74GB read
+Requests/sec:   8028.14
+Transfer/sec:     19.59MB
+Spring Data 
+Running 5m test @ http://localhost:8080/student
+  4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    45.57ms   34.46ms 341.66ms   60.85%
+    Req/Sec   593.09     58.84     1.19k    69.94%
+  708515 requests in 5.00m, 5.57GB read
+Requests/sec:   2361.00
+Transfer/sec:     19.02MB
+Spring Custom 
+Running 5m test @ http://localhost:8888/api/v1/Student
+  4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.96ms   15.11ms 195.61ms   63.16%
+    Req/Sec     1.45k    95.57     2.14k    68.75%
+  1733533 requests in 5.00m, 4.71GB read
+Requests/sec:   5776.78
+Transfer/sec:     16.07MB
+5 minutes, 4 Threads, 500 connections
+Palmyra
+Running 5m test @ http://localhost:6060/palmyra/api/v2/myapp/query/Student
+  4 threads and 500 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    83.01ms   85.49ms 462.49ms   83.07%
+    Req/Sec     2.01k   310.43     3.59k    70.92%
+  2395992 requests in 5.00m, 5.71GB read
+Requests/sec:   7984.24
+Transfer/sec:     19.49MB
+Spring Data 
+Running 5m test @ http://localhost:8080/student
+  4 threads and 500 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   215.30ms   93.66ms   1.13s    85.73%
+    Req/Sec   589.40     55.02   820.00     68.84%
+  703863 requests in 5.00m, 5.54GB read
+Requests/sec:   2345.70
+Transfer/sec:     18.90MB
+Spring Custom
+Running 5m test @ http://localhost:8888/api/v1/Student
+  4 threads and 500 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    92.46ms   61.95ms 899.42ms   86.56%
+    Req/Sec     1.47k    84.00     2.11k    71.12%
+  1750838 requests in 5.00m, 4.76GB read
+Requests/sec:   5834.20
+Transfer/sec:     16.23MB
+5 minutes, 4 Threads, 1000 connections
+Palmyra
+Running 5m test @ http://localhost:6060/palmyra/api/v2/myapp/query/Student
+  4 threads and 1000 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   131.17ms  112.86ms 755.18ms   34.17%
+    Req/Sec     2.00k   241.93     3.50k    72.03%
+  2392609 requests in 5.00m, 5.70GB read
+Requests/sec:   7973.09
+Transfer/sec:     19.46MB
+Spring Data 
+Running 5m test @ http://localhost:8080/student
+  4 threads and 1000 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   426.77ms  114.13ms   1.18s    85.02%
+    Req/Sec   587.48     65.22   838.00     68.96%
+  701447 requests in 5.00m, 5.52GB read
+Requests/sec:   2337.40
+Transfer/sec:     18.83MB
+Spring Custom
+Running 5m test @ http://localhost:8888/api/v1/Student
+  4 threads and 1000 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   172.41ms   61.40ms   1.04s    84.40%
+    Req/Sec     1.47k    87.84     2.33k    74.14%
+  1753183 requests in 5.00m, 4.76GB read
+Requests/sec:   5842.01
+Transfer/sec:     16.25MB

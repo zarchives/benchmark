@@ -1,0 +1,28 @@
+{
+  "name" : "<tobechanged>",
+  "label" : "Student",
+  "mode" : "block",
+  "active" : true,
+  "fields" : [ {
+    "name" : "id",
+    "searchable" : true,
+    "sortable" : true
+  }, {
+    "name" : "studentName",
+    "mandatory" : true
+  }, {
+    "name" : "dob",
+    "mandatory" : true
+  }, {
+    "name" : "studentCode",
+    "mandatory" : true,
+    "searchable" : true,
+    "sortable" : true
+  }, {
+    "name" : "studentClass"
+  }, {
+    "name" : "lastAttendedOn"
+  } ],
+  "editable" : "editable",
+  "type" : "Student"
+}

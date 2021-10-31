@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc       
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/data/jpa
+   		http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<context:component-scan base-package="com.biocliq" />
+
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/api/v*/**" />
+			<bean
+				class="com.zitlab.palmyra.webservice.security.SecurityCheckInterceptor">
+				<property name="authProviders">
+					<list>
+						<bean
+							class="com.zitlab.palmyra.webservice.security.provider.NoAuthProvider"></bean>						
+						<bean
+							class="com.zitlab.palmyra.webservice.security.provider.BasicAuthProvider"></bean>
+						<bean
+							class="com.zitlab.palmyra.webservice.security.provider.TrustedAuthProvider"></bean>
+					</list>
+				</property>
+			</bean>
+		</mvc:interceptor>		
+		<mvc:interceptor>
+			<mvc:mapping path="/device/v*/**" />
+			<bean
+				class="com.zitlab.palmyra.webservice.security.SecurityCheckInterceptor">
+				<property name="authProviders">
+					<list>						
+						<bean
+							class="com.zitlab.palmyra.webservice.security.provider.TrustedAuthProvider"></bean>
+					</list>
+				</property>
+			</bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+</beans>
