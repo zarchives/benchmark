@@ -7,10 +7,9 @@ def versions = [jetty : '10.0.6']
 group = 'com.biocliq.myapp'
 
 repositories {
-	mavenLocal()
-	//maven {
-	//	url="https://dl.fluwiz.com/repo/releases"
-	//}	
+	maven {
+		url="https://dl.fluwiz.com/repo/releases"
+	}	
 	mavenCentral()	
 }
 
@@ -19,7 +18,7 @@ sourceCompatibility = '11'
 dependencies {
 	implementation group: 'com.biocliq.fluwiz', name: 'fluwiz-server', version:'0.3-SNAPSHOT'	
 
-implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.0.0'
+	implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.0.0'
 
 	testImplementation group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
 	testImplementation group: 'org.springframework.security', name: 'spring-security-test', version: '5.5.0'		
